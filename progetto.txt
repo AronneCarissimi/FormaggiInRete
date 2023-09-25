@@ -1,6 +1,11 @@
+problema:
+    controllare la temperatura e l'umnidità e gestire i tempi di stagionatura dei formaggi in un piccolo caseificio da remoto
+
+
 funzionalità:
     tracciare lo stato i tutti i formaggi
     visualizzare un grafico dell'andamento di temparatura e umidità negli ultimi giorni
+    
     
 
 
