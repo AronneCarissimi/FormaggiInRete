@@ -1,0 +1,36 @@
+funzionalità:
+    tracciare lo stato i tutti i formaggi
+    visualizzare un grafico dell'andamento di temparatura e umidità negli ultimi giorni
+    
+
+
+
+
+
+
+
+
+
+
+
+
+scaffale{
+    id.scaffale
+    numeroPosti
+    temperatura
+    temperaturaMedia
+    umidita
+    umiditaMedia
+}
+formaggio{
+    id.formaggio
+    id.scaffale
+    targetTempo
+    tempo
+    temperaturaMassima
+    temperaturaMinima
+    umiditaMassima
+    umiditaMinima
+    tipo
+    posizione
+    isAndatoAMale
