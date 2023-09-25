@@ -3,7 +3,9 @@ problema:
 
 
 funzionalità:
-    assistere allastagionatura dei formaggi
+    
+    possibilità di accedere da web tramite mail
+    assistere alla stagionatura dei formaggi
     tracciare lo stato i tutti i formaggi in stagionatura
     visualizzare un grafico dell'andamento di temparatura e umidità negli ultimi giorni
     inviare notifiche quando uno o più formaggi non si trovano alle condizioni ottimiali di stagionatura
@@ -18,10 +20,12 @@ funzionalità:
 scaffale{
     id.scaffale
     numeroPosti
-    temperatura
-    temperaturaMedia
-    umidita
-    umiditaMedia
+}
+misurazione{
+    tipo di dato
+    valore
+    indicazione di posizione
+    data
 }
 formaggio{
     id.formaggio
