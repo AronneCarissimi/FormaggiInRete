@@ -8,6 +8,7 @@ funzionalità:
     visualizzare un grafico dell'andamento di temparatura e umidità negli ultimi giorni
     inviare notifiche quando uno o più formaggi non si trovano alle condizioni ottimiali di stagionatura
     inviare notifiche quando uno o più formaggi devono essere girati
+    possibilità di registrare nuovi formaggi (e creare nuovi template?)
     
     
 
