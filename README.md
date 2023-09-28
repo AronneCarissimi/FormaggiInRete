@@ -17,30 +17,3 @@ funzionalità:
 
     
     
-
-
-
-```
-scaffale{
-    id.scaffale
-    numeroPosti
-}
-misurazione{
-    tipo di dato
-    valore
-    indicazione di posizione
-    data
-}
-formaggio{
-    id.formaggio
-    id.scaffale
-    targetTempo
-    tempo
-    temperaturaMassima
-    temperaturaMinima
-    umiditaMassima
-    umiditaMinima
-    tipo
-    posizione
-    isAndatoAMale
-```
