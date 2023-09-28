@@ -20,7 +20,7 @@ funzionalità:
 
 
 
-
+```
 scaffale{
     id.scaffale
     numeroPosti
@@ -43,3 +43,4 @@ formaggio{
     tipo
     posizione
     isAndatoAMale
+```
