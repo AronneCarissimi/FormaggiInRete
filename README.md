@@ -17,3 +17,4 @@ funzionalità:
 
     
 ![mockup](/mockup.png)    
+![ER](/ER.jpeg)  
