@@ -13,5 +13,5 @@ funzionalità:
     possibilità di registrare nuovi formaggi (e creare nuovi template?)
 
     
-![mockup](/schermata 1.png)    
+![mockup](/schermata%201.png.png)    
 ![ER](/ER.png)  
