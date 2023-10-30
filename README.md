@@ -1,7 +1,7 @@
 # FormaggiInRete
 problema:
 
-    controllare la temperatura e l'umnidità e gestire i tempi di stagionatura dei formaggi in un piccolo caseificio da remoto
+    controllare la temperatura e l'umnidità e gestire i tempi di stagionatura dei formaggi in un piccolo caseificio
 
 
 funzionalità:
