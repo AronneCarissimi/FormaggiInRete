@@ -24,7 +24,7 @@ if (isset($_POST["logout"])) {
     <h1>Welcome
         <?php echo $_SESSION["username"]; ?>!
     </h1>
-
+    <a href="creaFormaggi.php">crea formaggi</a>
     <form method="post" action="">
         <input type="submit" name="logout" value="Logout">
     </form>

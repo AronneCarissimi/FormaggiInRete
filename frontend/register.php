@@ -29,7 +29,7 @@ if (isset($_SESSION["username"])) {
         <input type="submit" value="Register">
     </form>
 
-    <a href="login.php">Login here</a>
+    <a href="login.php">Login</a>
 </body>
 
 </html>
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = md5($password);
 
     // Insert user data into the database
-    $sql = "INSERT INTO utenti (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
+    $sql = "INSERT INTO utente (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
 
     if ($conn->query($sql) === TRUE) {
         session_start();

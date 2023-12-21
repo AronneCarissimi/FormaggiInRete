@@ -16,14 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Perform the login logic here
-    $sql = "SELECT * FROM utenti WHERE username = '$username' AND password = '$hashedPassword'";
+    $sql = "SELECT * FROM utente WHERE username = '$username' AND password = '$hashedPassword'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         session_start();
         $_SESSION["username"] = $username;
-
-        setcookie("username", $username, time() + 3600);
-        setcookie("password", $hashedPassword, time() + 3600);
 
         header("Location: profile.php");
     } else {
