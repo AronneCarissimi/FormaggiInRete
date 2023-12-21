@@ -1,0 +1,7 @@
+requisiti:
+--avere xampp
+
+Tutorial:
+mettere i file nella cartella htdocs
+far partire Apache e MySQL
+risolvere i problemi che non faranno funzionare MySQL
