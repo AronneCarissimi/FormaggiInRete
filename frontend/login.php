@@ -4,6 +4,8 @@ if (isset($_SESSION["username"])) {
     header("Location: profile.php");
     exit();
 }
+
+$error = isset($_GET["error"]) ? $_GET["error"] : "";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,10 +24,16 @@ if (isset($_SESSION["username"])) {
         <input type="password" id="password" name="password" required><br><br>
         <input type="submit" value="Login">
     </form>
+    <?php
+    if ($error === "1") {
+        echo "<span style='color: red;'>Invalid username or password</span>";
+    }
+    ?>
+    <br>
     <a href="register.php">Register</a>
+
 </body>
 
 </html>
-</body>
 
 </html>

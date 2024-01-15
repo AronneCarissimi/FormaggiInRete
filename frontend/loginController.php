@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
@@ -19,12 +21,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "SELECT * FROM utente WHERE username = '$username' AND password = '$hashedPassword'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
-        session_start();
-        $_SESSION["username"] = $username;
+        $row = $result->fetch_assoc();
+        $_SESSION["username"] = $row["USERNAME"];
+        $_SESSION["idUtente"] = $row["ID"];
 
         header("Location: profile.php");
     } else {
-        echo "Invalid username or password.";
+        header("location: login.php?error=1");
+
     }
 }
 

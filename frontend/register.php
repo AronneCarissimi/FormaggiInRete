@@ -55,8 +55,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         session_start();
-        $_SESSION["username"] = $username;
-        header("Location: profile.php");
+        $sql = "SELECT * FROM utente WHERE username = '$username' AND password = '$hashedPassword'";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $_SESSION["username"] = $row["USERNAME"];
+            $_SESSION["idUtente"] = $row["ID"];
+
+            header("Location: profile.php");
+        }
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }

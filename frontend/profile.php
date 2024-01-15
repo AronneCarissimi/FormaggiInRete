@@ -17,14 +17,17 @@ if (isset($_POST["logout"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Profilo di
+        <?php echo $_SESSION["username"]; ?>
+    </title>
 </head>
 
 <body>
     <h1>Welcome
         <?php echo $_SESSION["username"]; ?>!
     </h1>
-    <a href="creaFormaggi.php">crea formaggi</a>
+    <a href="creaFormaggi.php">crea formaggi</a> <br>
+    <a href="visualizzaFormaggi.php">visualizza formaggi</a>
     <form method="post" action="">
         <input type="submit" name="logout" value="Logout">
     </form>
