@@ -11,7 +11,7 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creaione Formaggi</title>
+    <title>Creazione Formaggi</title>
 </head>
 
 <body>
@@ -20,8 +20,9 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
     <form action="creaFormaggiController.php" method="POST">
         <label for="tipo">Seleziona il tipo:</label>
         <select name="tipo" id="tipo">
+        <option value=""> </option>
             <?php
-            $result = $conn->query("SELECT nome,id FROM tipo");
+            $result = $conn->query("SELECT nome,id FROM tipo ORDER BY nome");
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
             }
@@ -29,15 +30,17 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         </select><br><br>
         <label for="caseificio">Seleziona il caseificio:</label>
         <select name="caseificio" id="caseificio">
+            <option value=''> </option>
             <?php
-            $result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id");
+            $result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id ORDER BY nome");
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
             }
             ?>
         </select><br><br>
         <label for="scaffale">seleziona lo scaffale:</label>
-        <select>
+        <select name="scaffale" id="scaffale">
+        <option value="">   </option>
             <?php
             //do stuff
             
@@ -48,6 +51,10 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
 
         <input type="submit" value="Submit">
     </form>
+    <script>
+
+    </script>
+
 </body>
 
 </html>
