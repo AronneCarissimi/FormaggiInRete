@@ -40,11 +40,7 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         </select><br><br>
         <label for="scaffale">seleziona lo scaffale:</label>
         <select name="scaffale" id="scaffale">
-        <option value="">   </option>
-            <?php
-            //do stuff
-            
-            ?>
+        <option value=""></option>
         </select><br><br>
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required><br><br>
@@ -52,6 +48,21 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         <input type="submit" value="Submit">
     </form>
     <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var caseificio = document.getElementById("caseificio");
+            caseificio.addEventListener("change", function(event) {
+                var id = caseificio.value;
+                var scaffale = document.getElementById("scaffale");
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        scaffale.innerHTML += this.responseText;
+                    }
+                };
+                xhttp.open("GET", "apiScaffali.php?id=" + id, true);
+                xhttp.send();
+            });
+        });
 
     </script>
 
