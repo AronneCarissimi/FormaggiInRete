@@ -20,7 +20,7 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
     <form action="creaFormaggiController.php" method="POST">
         <label for="tipo">Seleziona il tipo:</label>
         <select name="tipo" id="tipo">
-        <option value=""> </option>
+            <option value=""> </option>
             <?php
             $result = $conn->query("SELECT nome,id FROM tipo ORDER BY nome");
             while ($row = $result->fetch_assoc()) {
@@ -40,21 +40,22 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         </select><br><br>
         <label for="scaffale">seleziona lo scaffale:</label>
         <select name="scaffale" id="scaffale">
-        <option value=""></option>
+            <option value=""></option>
         </select><br><br>
-        <label for="nome">Nome:</label>
+        <label for="nome">Identificativo:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
         <input type="submit" value="Submit">
     </form>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
+        document.addEventListener("DOMContentLoaded", function (event) {
             var caseificio = document.getElementById("caseificio");
-            caseificio.addEventListener("change", function(event) {
+            caseificio.addEventListener("change", function (event) {
                 var id = caseificio.value;
                 var scaffale = document.getElementById("scaffale");
                 var xhttp = new XMLHttpRequest();
-                xhttp.onreadystatechange = function() {
+                scaffale.innerHTML = '<option value=""></option>'
+                xhttp.onreadystatechange = function () {
                     if (this.readyState == 4 && this.status == 200) {
                         scaffale.innerHTML += this.responseText;
                     }

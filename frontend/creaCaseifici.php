@@ -22,4 +22,5 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         <input type="submit" value="Submit">
     </form>
 </body>
+
 </html>

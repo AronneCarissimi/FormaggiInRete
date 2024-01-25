@@ -1,10 +1,10 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome = $_POST["nome"];
-session_start();
+    session_start();
     if (isset($_SESSION["idUtente"])) {
         $id = $_SESSION["idUtente"];
-}
+    }
 
     // Connect to the database
     $conn = new mysqli("localhost", "root", "", "formaggi");
