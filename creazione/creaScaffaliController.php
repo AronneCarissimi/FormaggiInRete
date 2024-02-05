@@ -18,6 +18,6 @@ $sql = "INSERT INTO `SCAFFALE` (`NOME`, `CASEIFICIO_ID`) VALUES ('$nome', '$case
 $conn->query($sql);
 $conn->close();
 
-header("Location: profile.php");
+header("Location: ../profilo/profile.php");
 
 ?>

@@ -21,7 +21,6 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
 
         <label for="caseificio">Seleziona il caseificio:</label>
         <select name="caseificio" id="caseificio">
-            <option value=''> </option>
             <?php
             $result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id ORDER BY nome");
             while ($row = $result->fetch_assoc()) {

@@ -20,6 +20,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($sql);
     $conn->close();
 
-    header("Location: visualizzaFormaggi.php");
+    header("Location: ../profilo/visualizzaFormaggi.php");
 }
 ?>

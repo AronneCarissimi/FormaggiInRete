@@ -60,7 +60,7 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
                         scaffale.innerHTML += this.responseText;
                     }
                 };
-                xhttp.open("GET", "apiScaffali.php?id=" + id, true);
+                xhttp.open("GET", "../api/apiScaffali.php?id=" + id, true);
                 xhttp.send();
             });
         });
