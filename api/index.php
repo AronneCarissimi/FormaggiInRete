@@ -11,9 +11,9 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
 if (isset ($segments[4]) && ($segments[4] != "")) {
     if (isset ($segments[5]) && ($segments[5] != "")) {
         if (isset ($segments[6]) && ($segments[6] != "")) {
-            $query = "SELECT"
+            $query = "SELECT * FROM $segments[6]  WHERE  $segments[4]_ID=$segments[5]";
         } else {
-
+            $query = "SELECT * FROM $segments[4] WHERE  ID=$segments[5]";
         }
     } else {
         $query = "SELECT * FROM $segments[4]";
@@ -25,7 +25,8 @@ if (isset ($segments[4]) && ($segments[4] != "")) {
 
     $result = $conn->query($query);
 
-    $res = $result->fetch_all();
+    $res = $result->fetch_all(MYSQLI_ASSOC);
+
     echo json_encode($res);
 
     $conn->close();
