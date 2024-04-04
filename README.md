@@ -16,3 +16,15 @@ funzionalità:
 ![mockup1](/schermata%201.png)
 ![mockup2](/schermata%202.png)    
 ![ER](/ER%20formaggi.png)  
+
+
+istruzioni:
+
+- scaricare i file
+- avviare apache e mySQL
+- mettere i file nella cartella htdocs di xampp
+- eseguire in ordine e query contenute nei file 'formaggiX.php':
+      -0 x creae il databese
+      -1 x creare le tabelle
+      -2 per popolare le tabelle
+- l'utente creato ha username admin e password admin
