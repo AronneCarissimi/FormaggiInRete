@@ -6,6 +6,13 @@ INSERT INTO `tipo` (`NOME`, `UMIDITA_MAX`, `UMIDITA_MIN`, `TEMPERATURA_MAX`, `TE
 INSERT INTO `tipo` (`NOME`, `UMIDITA_MAX`, `UMIDITA_MIN`, `TEMPERATURA_MAX`, `TEMPERATURA_MIN`) VALUES ('caciocavallo', '50', '30', '18', '5');
 
 INSERT INTO `SENSORE` (`NOME`) VALUES ('sensore 1');
-INSERT INTO `temperatura` (`ID`, `VALORE`, `TEMPO`, `SENSORE_ID`) VALUES (NULL, '4', '2024-04-03', '1');
-INSERT INTO `umidita` (`ID`, `VALORE`, `TEMPO`, `SENSORE_ID`) VALUES (NULL, '33', '2024-04-03', '1');
-INSERT INTO `utente` (`ID`, `USERNAME`, `PASSWORD`, `EMAIL`) VALUES (NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'a@a.a')
+INSERT INTO `temperatura` (`ID`, `VALORE`, `TEMPO`, `SENSORE_ID`) VALUES (NULL, '4', NULL, '1');
+INSERT INTO `umidita` (`ID`, `VALORE`, `TEMPO`, `SENSORE_ID`) VALUES (NULL, '33', NULL, '1');
+
+INSERT INTO `utente` (`ID`, `USERNAME`, `PASSWORD`, `EMAIL`) VALUES (NULL, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'a@a.a');
+INSERT INTO `caseificio` (`ID`, `NOME`, `UTENTE_ID`) VALUES (NULL, 'prova', '1');
+INSERT INTO `scaffale` (`ID`, `NOME`, `CASEIFICIO_ID`) VALUES (NULL, 'prova', '1');
+
+INSERT INTO `formaggio` (`ID`, `NOME`, `TEMPO`, `SCAFFALE_ID`, `TIPO_ID`, `SENSORE_ID`) VALUES (NULL, 'prova', NULL, '1', '6', '1');
+INSERT INTO `formaggio` (`ID`, `NOME`, `TEMPO`, `SCAFFALE_ID`, `TIPO_ID`, `SENSORE_ID`) VALUES (NULL, 'prova2', NULL, '1', '2', '1');
+INSERT INTO `formaggio` (`ID`, `NOME`, `TEMPO`, `SCAFFALE_ID`, `TIPO_ID`, `SENSORE_ID`) VALUES (NULL, 'prova3', NULL, '1', '3', '1');
