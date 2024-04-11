@@ -4,10 +4,10 @@
 $param = $_GET["id"];
 
 // Create connection
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
 //query
-$sql = "SELECT id,nome FROM `scaffale` WHERE `caseificio_id` = '$param' ORDER BY nome";
+$sql = "SELECT id,nome FROM `SCAFFALE` WHERE `CASEIFICIO_ID` = '$param' ORDER BY nome";
 
 //execute query
 $result = $conn->query($sql);

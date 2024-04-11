@@ -1,9 +1,9 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
 //query
-$sql = "SELECT * FROM `formaggio` ORDER BY ID";
+$sql = "SELECT * FROM `FORMAGGIO` ORDER BY ID";
 
 //execute query
 $result = $conn->query($sql);
