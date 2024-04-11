@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"];
 
     // Connect to the database
-    $conn = new mysqli("localhost", "root", "", "formaggi");
+    $conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
     // Check connection
     if ($conn->connect_error) {
