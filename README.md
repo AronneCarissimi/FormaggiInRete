@@ -26,3 +26,6 @@ istruzioni:
       -1 x creare le tabelle
       -2 per popolare le tabelle
 - l'utente creato ha username admin e password admin
+
+
+docker run --name myXampp -p 41061:22 -p 41062:80 -d -v /workspaces/FormaggiInRete:/www tomsik68/xampp:8
