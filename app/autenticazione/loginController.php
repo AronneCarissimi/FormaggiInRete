@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = md5($password);
 
     // Connect to the database
-    $conn = new mysqli("localhost", "root", "", "formaggi");
+    $conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
     // Check connection
     if ($conn->connect_error) {
@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Perform the login logic here
-    $sql = "SELECT * FROM utente WHERE username = '$username' AND password = '$hashedPassword'";
+    $sql = "SELECT * FROM UTENTE WHERE USERNAME = '$username' AND PASSWORD = '$hashedPassword'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();

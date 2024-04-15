@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION["idUtente"])) {
     $id = $_SESSION["idUtente"];
 }
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +22,9 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         <label for="caseificio">Seleziona il caseificio:</label>
         <select name="caseificio" id="caseificio">
             <?php
-            $result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id ORDER BY nome");
+            $result = $conn->query("SELECT NOME,ID FROM CASEIFICIO WHERE UTENTE_ID = $id ORDER BY nome");
             while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['NOME'] . "</option>";
             }
             ?>
         </select><br><br>

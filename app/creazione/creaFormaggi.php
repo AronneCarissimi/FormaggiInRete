@@ -3,7 +3,7 @@ session_start();
 if (isset($_SESSION["idUtente"])) {
     $id = $_SESSION["idUtente"];
 }
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +22,9 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         <select name="tipo" id="tipo">
             <option value=""> </option>
             <?php
-            $result = $conn->query("SELECT nome,id FROM tipo ORDER BY nome");
+            $result = $conn->query("SELECT NOME,ID FROM TIPO ORDER BY NOME");
             while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['NOME'] . "</option>";
             }
             ?>
         </select><br><br>
@@ -32,9 +32,9 @@ $conn = new mysqli("localhost", "root", "", "formaggi");
         <select name="caseificio" id="caseificio">
             <option value=''> </option>
             <?php
-            $result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id ORDER BY nome");
+            $result = $conn->query("SELECT NOME,ID FROM CASEIFICIO WHERE UTENTE_ID = $id ORDER BY nome");
             while ($row = $result->fetch_assoc()) {
-                echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                echo "<option value='" . $row['ID'] . "'>" . $row['NOME'] . "</option>";
             }
             ?>
         </select><br><br>
