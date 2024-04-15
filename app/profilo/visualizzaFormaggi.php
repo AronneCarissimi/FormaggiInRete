@@ -3,9 +3,9 @@ session_start();
 if (isset($_SESSION["idUtente"])) {
     $id = $_SESSION["idUtente"];
 }
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
-$result = $conn->query("SELECT nome,id FROM caseificio WHERE utente_id = $id ORDER BY nome");
+$result = $conn->query("SELECT NOME,ID FROM CASEIFICIO WHERE UTENTE_ID = $id ORDER BY NOME");
 // put the result in an array
 $caseifici = [];
 while ($row = $result->fetch_assoc()) {
@@ -39,11 +39,11 @@ $result->close();
 
     <?php
     foreach ($caseifici as $caseificio) {
-        $id = $caseificio["id"];
-        $result = $conn->query("SELECT formaggio.ID as ID, formaggio.NOME as NOME, formaggio.TEMPO as TEMPO, tipo.NOME as TIPO, scaffale.NOME as SCAFFALE, caseificio.NOME as CASEIFICIO FROM (((formaggio inner join scaffale on formaggio.SCAFFALE_ID=scaffale.ID) INNER JOIN caseificio on scaffale.CASEIFICIO_ID = caseificio.ID) INNER JOIN utente on caseificio.UTENTE_ID=utente.ID) INNER JOIN tipo ON tipo.id = formaggio.tipo_id WHERE caseificio.ID=$id ORDER BY SCAFFALE,TIPO,NOME;");
+        $id = $caseificio["ID"];
+        $result = $conn->query("SELECT FORMAGGIO.ID as ID, FORMAGGIO.NOME as NOME, FORMAGGIO.TEMPO as TEMPO, TIPO.NOME as TIPO, SCAFFALE.NOME as SCAFFALE, CASEIFICIO.NOME as CASEIFICIO FROM (((FORMAGGIO inner join SCAFFALE on FORMAGGIO.SCAFFALE_ID=SCAFFALE.ID) INNER JOIN CASEIFICIO on SCAFFALE.CASEIFICIO_ID = CASEIFICIO.ID) INNER JOIN UTENTE on CASEIFICIO.UTENTE_ID=UTENTE.ID) INNER JOIN TIPO ON TIPO.ID = FORMAGGIO.TIPO_ID WHERE CASEIFICIO.ID=$id ORDER BY SCAFFALE,TIPO,NOME;");
         ?>
         <h2>
-            <?php echo $caseificio["nome"] ?>
+            <?php echo $caseificio["NOME"] ?>
         </h2>
         <table>
             <tr>

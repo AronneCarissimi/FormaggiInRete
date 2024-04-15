@@ -5,7 +5,7 @@ $uri = $_SERVER['REQUEST_URI'];
 // Split the URI into segments
 $segments = explode('/', $uri);
 
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
 // Check if the 4th segment exists
 if (isset ($segments[4]) && ($segments[4] != "")) {

@@ -1,7 +1,7 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "formaggi");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 $idFormaggio = $_GET['id'];
-$sql = ("DELETE FROM formaggio WHERE ID = $idFormaggio");
+$sql = ("DELETE FROM FORMAGGIO WHERE ID = $idFormaggio");
 $conn->query($sql);
 $conn->close();
 echo "";
