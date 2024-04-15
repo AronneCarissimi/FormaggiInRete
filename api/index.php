@@ -14,15 +14,26 @@ for($i = 0; $i < count($segments); $i++) {
     $segments[$i] = strtoupper($segments[$i]);
 }
 
+$tabelle = ["CASEIFICIO", "FORMAGGIO", "SCAFFALE", "SENSORE", "TEMPERATURA", "TIPO", "UMIDITA", "UTENTE",];
 
 //print_r ($segments);
+
+
 
 $conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
 
 if (isset ($segments[0]) && ($segments[0] != "")) {
+    if (!in_array($segments[0], $tabelle)) {
+        echo json_encode(["error" => "invalid table: ".$segments[0]]);
+        exit();
+    }
     if (isset ($segments[1]) && ($segments[1] != "")) {
         if (isset ($segments[2]) && ($segments[2] != "")) {
+            if (!in_array($segments[2], $tabelle)) {
+                echo json_encode(["error" => "invalid table: ".$segments[2]] );
+                exit();
+            }
             $query = "SELECT * FROM $segments[2]  WHERE  $segments[0]_ID=$segments[1]";
         } else {
             $query = "SELECT * FROM $segments[0] WHERE  ID=$segments[1]";
@@ -43,7 +54,7 @@ if (isset ($segments[0]) && ($segments[0] != "")) {
 
     $conn->close();
 } else {
-    echo "Invalid request";
+    echo json_encode(["error" => "invalid request"]);
 }
 
 exit();
