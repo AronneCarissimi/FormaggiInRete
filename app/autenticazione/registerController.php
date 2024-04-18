@@ -18,14 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = strtolower($email);
 
     // Check if the username is already taken
-    $sql = "SELECT * FROM utente WHERE username = '$username'";
+    $sql = "SELECT * FROM UTENTE WHERE USERNAME = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         header("location: register.php?error=1");
         exit();
     } else {
         // Check if the email is already taken
-        $sql = "SELECT * FROM utente WHERE email = '$email'";
+        $sql = "SELECT * FROM UTENTE WHERE EMAIL = '$email'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             header("location: register.php?error=2");
@@ -38,11 +38,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $hashedPassword = md5($password);
 
     // Insert user data into the database
-    $sql = "INSERT INTO utente (username, password, email) VALUES ('$username', '$hashedPassword', '$email')";
+    $sql = "INSERT INTO UTENTE (USERNAME, PASSWORD, EMAIL) VALUES ('$username', '$hashedPassword', '$email')";
 
     if ($conn->query($sql) === TRUE) {
         session_start();
-        $sql = "SELECT * FROM utente WHERE username = '$username' AND password = '$hashedPassword'";
+        $sql = "SELECT * FROM UTENTE WHERE USERNAME = '$username' AND PASSWORD = '$hashedPassword'";
         $result = $conn->query($sql);
         if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();

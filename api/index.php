@@ -22,6 +22,7 @@ $tabelle = ["CASEIFICIO", "FORMAGGIO", "SCAFFALE", "SENSORE", "TEMPERATURA", "TI
 
 $conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
+header('Content-Type: application/json');
 
 if (isset ($segments[0]) && ($segments[0] != "")) {
     if (!in_array($segments[0], $tabelle)) {
@@ -49,6 +50,8 @@ if (isset ($segments[0]) && ($segments[0] != "")) {
     $result = $conn->query($query);
 
     $res = $result->fetch_all(MYSQLI_ASSOC);
+
+
 
     echo json_encode($res);
 

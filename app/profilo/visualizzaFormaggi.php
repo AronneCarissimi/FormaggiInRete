@@ -71,7 +71,7 @@ $result->close();
                         <?php echo $row['SCAFFALE']; ?>
                     </td>
                     <td>
-                        <?php echo "<button onclick=eliminaRiga(" . $row['ID'] . ") >elimina</button>" ?>
+                        <?php echo "<button onclick=\"eliminaRiga(" . $row['ID'] . ");\">elimina</button>" ?>
                     </td>
                 </tr>
                 <?php
