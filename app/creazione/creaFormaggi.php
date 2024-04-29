@@ -4,6 +4,7 @@ if (isset($_SESSION["idUtente"])) {
     $id = $_SESSION["idUtente"];
 }
 $conn = new mysqli("localhost", "root", "", "FORMAGGI");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 ?>
 <!DOCTYPE html>
 <html lang="en">

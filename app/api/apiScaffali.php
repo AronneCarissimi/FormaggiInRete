@@ -5,6 +5,7 @@ $param = $_GET["id"];
 
 // Create connection
 $conn = new mysqli("localhost", "root", "", "FORMAGGI");
+$conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
 //query
 $sql = "SELECT ID,NOME FROM `SCAFFALE` WHERE `CASEIFICIO_ID` = '$param' ORDER BY NOME";

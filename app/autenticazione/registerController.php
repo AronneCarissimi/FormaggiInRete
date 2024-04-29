@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Check if the username is already taken
     $sql = "SELECT * FROM UTENTE WHERE USERNAME = '$username'";
+    $sql = "SELECT * FROM UTENTE WHERE USERNAME = '$username'";
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         header("location: register.php?error=1");

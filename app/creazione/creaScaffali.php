@@ -22,7 +22,7 @@ $conn = new mysqli("localhost", "root", "", "FORMAGGI");
         <label for="caseificio">Seleziona il caseificio:</label>
         <select name="caseificio" id="caseificio">
             <?php
-            $result = $conn->query("SELECT NOME,ID FROM CASEIFICIO WHERE UTENTE_ID = $id ORDER BY nome");
+            $result = $conn->query("SELECT NOME,ID FROM CASEIFICIO WHERE UTENTE_ID = $id ORDER BY NOME");
             while ($row = $result->fetch_assoc()) {
                 echo "<option value='" . $row['ID'] . "'>" . $row['NOME'] . "</option>";
             }

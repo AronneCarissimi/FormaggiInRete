@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Connect to the database
     $conn = new mysqli("localhost", "root", "", "FORMAGGI");
+    $conn = new mysqli("localhost", "root", "", "FORMAGGI");
 
     // Check connection
     if ($conn->connect_error) {
