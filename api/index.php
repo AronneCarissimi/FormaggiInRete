@@ -14,7 +14,7 @@ for($i = 0; $i < count($segments); $i++) {
     $segments[$i] = strtoupper($segments[$i]);
 }
 
-$tabelle = ["CASEIFICIO", "FORMAGGIO", "SCAFFALE", "SENSORE", "TEMPERATURA", "TIPO", "UMIDITA", "UTENTE",];
+$tabelle = ["CASEIFICIO", "FORMAGGIO", "SCAFFALE", "SENSORE", "TEMPERATURA", "TIPO", "UMIDITA", "UTENTE","TENANT"];
 
 //print_r ($segments);
 
